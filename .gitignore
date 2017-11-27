@@ -1,4 +1,6 @@
-/base-backup/
+/base-backup
 /fct/conn.php
 /sauvegarde.zip
-/tcpdf/examples/
+/tcpdf/examples
+.htaccess
+.htpasswd

@@ -92,6 +92,27 @@ if($_GET['action']=="unhide")
 }
 
 
-
 include_once('./fct/scripts.php');
 //les scripts de fin de page
+?>
+
+<script>
+  $(document).ready( function () {
+    $('#tab_locataires').DataTable({
+      "language":{
+  "url":"https://cdn.datatables.net/plug-ins/1.10.16/i18n/French.json"
+}
+}
+    );
+} );
+</script>
+<script>
+  $(document).ready( function () {
+    $('#tab_locataires_inactifs').DataTable({
+      "language":{
+  "url":"https://cdn.datatables.net/plug-ins/1.10.16/i18n/French.json"
+}
+}
+    );
+} );
+</script>
