@@ -5,6 +5,7 @@
 include_once('./fct/conn.php');
 
 include_once('./fct/fctglobales.php');
+$_SESSION['mail_psw'] = get_mail_psw();
 
 //modele societes
 include_once('./fct/societe.php');
@@ -25,6 +26,3 @@ $quittance = new quittance();
  //modèle logement
  include_once('./fct/logement.php');
  $logement = new logement();
-
-
-?>

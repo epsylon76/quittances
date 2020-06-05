@@ -28,7 +28,7 @@ function ponctuel($datedebut,$datefin)
 	$mf=date("m",strtotime($datefin));
 	$ad=date("Y",strtotime($datedebut));
 	$af=date("Y",strtotime($datefin));
-	if($af=$ad && $md==$mf)
+	if($af==$ad && $md==$mf)
 	{return true;}
 	else {
 		return false;
@@ -229,4 +229,20 @@ echo'
 			</div>
 		</div>
 	</div>';
+}
+
+
+function get_mail_psw(){
+	global $bdd;
+	$req = $bdd->prepare('SELECT `psw` from `parametres` WHERE `id` = 1');
+	$req->execute();
+	$psw = $req->fetch();
+	return $psw[0];
+}
+
+function set_mail_psw($newpsw){
+	global $bdd;
+	$req = $bdd->prepare('UPDATE `parametres` SET `psw` = :newpsw WHERE `id` = 1');
+	$req->bindParam(':newpsw', $newpsw);
+	$req->execute();
 }

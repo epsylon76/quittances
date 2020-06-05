@@ -93,6 +93,16 @@
       <div class="col-md-4 col-sm-6" >
 
         <div class="form-group">
+          <label for="datedebut">Date début</label>
+          <input type="date" class="form-control" id="datedebut" name="datedebut"  value="<?php echo $datedebut ?>">
+        </div>
+
+        <div class="form-group">
+          <label for="datefin">Date fin</label>
+          <input type="date" class="form-control" id="datefin" name="datefin"  value="<?php echo $datefin ?>">
+        </div>
+
+        <div class="form-group">
           <label for="provision">Date d'édition</label>
           <input type="date" class="form-control" id="dateedition" name="dateedition"  value="<?php echo $dateedition ?>">
         </div>

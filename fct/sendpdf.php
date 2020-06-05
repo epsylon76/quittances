@@ -7,30 +7,15 @@ function envoimail($from, $to, $subject, $message, $fichier, $nompiecejointe){
 
     $mail = new PHPMailer();
     $mail->CharSet = "UTF-8";
-    // telling the class to use SMTP
-    //$mail->IsSMTP();
-    // enables SMTP debug information (for testing)
-    // 1 = errors and messages
-    // 2 = messages only
-    //$mail->SMTPDebug  = 2;
-    //$mail->Debugoutput = 'html';
-    //$mail->SMTPKeepAlive = true;
-    // enable SMTP authentication
-    //$mail->SMTPAuth   = true;
+    $mail->isSMTP(); // Paramétrer le Mailer pour utiliser SMTP
+    $mail->Host = 'smtp.office365.com'; // Spécifier le serveur SMTP
+    $mail->SMTPAuth = true; // Activer authentication SMTP
+    $mail->Username = 'abimmo76@hotmail.com'; // Votre adresse email d'envoi
+    $mail->Password = $_SESSION['mail_psw']; // Le mot de passe de cette adresse email
+    $mail->SMTPSecure = 'tls'; // Accepter TLS
+    $mail->Port = 587;
 
-    //$mail->SMTPSecure = "tls";
-    // sets  the SMTP server
-    $mail->Host       = "localhost"; //smtp-mail.outlook.com
-
-    // set the SMTP port for the GMAIL server
-    //$mail->Port       = 587;
-    // GMAIL username
-    //$mail->Username   = "arnaudbinet@hotmail.com";
-    // GMAIL password
-    //$mail->Password   = "db060557";
-    //Set reply-to email this is your own email, not the gmail account
-    //used for sending emails
-    $mail->SetFrom('arnaudbinet@hotmail.com');
+    $mail->SetFrom('abimmo76@hotmail.com'); //LE MDP EST DANS /etc/nullmailer/remotes
     $mail->FromName = $from;
     // Mail Subject
     $mail->Subject    = $subject;

@@ -24,6 +24,9 @@
           <li>
             <a href="mouvements.php">Mouvements</a>
           </li>
+          <li>
+            <a href="parametres.php">Paramètres</a>
+          </li>
 
         </ul>
       </div><!--/.nav-collapse -->

@@ -51,6 +51,8 @@
 
 
       <?php
+      if($contrat->has_contrats($cli['cid']))
+      {
       foreach($listecontrats as $con) //pour chaque cas de contrat
       {
 
@@ -115,6 +117,7 @@
 
         <?php
       }   //foreach
+    }//has contrat
       ?>
 
     </div> <!-- col-md-6 -->

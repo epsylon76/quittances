@@ -34,6 +34,8 @@ if($type=="new" || $type=="modif")
   $moyenpaiement=$_POST['moyenpaiement'];
   $datepaiement=$_POST['datepaiement'];
   $dateedition=$_POST['dateedition'];
+  $datedebut=$_POST['datedebut'];
+  $datefin=$_POST['datefin'];
   $note=$_POST['qnote'];
 }
 
@@ -64,6 +66,8 @@ if($type=="new")
       `moyenpaiement` = :moyenpaiement,
       `datepaiement` = :datepaiement,
       `dateedition` = :dateedition,
+      `datedebut` = :datedebut,
+      `datefin` = :datefin,
       `qnote` = :qnote"
     );
 
@@ -77,6 +81,8 @@ if($type=="new")
     'moyenpaiement'=>$moyenpaiement,
     'datepaiement'=>$datepaiement,
     'dateedition' =>$dateedition,
+    'datedebut' =>$datedebut,
+    'datefin' =>$datefin,
     'qnote' => $note
   );
 
@@ -105,6 +111,8 @@ if($type=="modif")
     `moyenpaiement` = :moyenpaiement,
     `datepaiement` = :datepaiement,
     `dateedition` = :dateedition,
+    `datedebut` = :datedebut,
+    `datefin` = :datefin,
     `qnote` = :qnote
     WHERE `qid`= :qid");
 
@@ -114,6 +122,8 @@ if($type=="modif")
     'moyenpaiement'=>$moyenpaiement,
     'datepaiement'=>$datepaiement,
     'dateedition' =>$dateedition,
+    'datedebut' =>$datedebut,
+    'datefin' =>$datefin,
     'qnote' => $note
   );
 

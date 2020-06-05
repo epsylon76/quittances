@@ -83,7 +83,7 @@ ul{list-style-type: none; padding-left:0px;}
             <?php echo $ligne['cnom'] ?>
           </td>
           <td>
-            <a href="./client.php?action=hide&cid=<?php echo $ligne['cid']?>"><i class="fa fa-arrow-up"></i>
+            <a href="./client.php?action=unhide&cid=<?php echo $ligne['cid']?>"><i class="fa fa-arrow-up"></i>
             </a>
           </td>
 

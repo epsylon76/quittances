@@ -77,9 +77,18 @@ td {border:1px solid black;padding:10px}
 '.$donneessociete['scp'].' '.$donneessociete['sville'].'
 </td>
 <td colspan="3" class="case2">
-<span class="titre">Quittance de loyer</span>
-<span class="periode">  de  '.$mois['nommois'].' '.$annee.'</span>
-</td>
+<span class="titre">Quittance de loyer</span><br>';
+
+if($donneesquittance['datedebut'] != '0000-00-00' && $donneesquittance['datefin'] != '0000-00-00'){
+  $html .= '<span class="periode">du  '.date_unix_humain($donneesquittance['datedebut']).' au '.date_unix_humain($donneesquittance['datefin']).'</span>';
+}else{
+  $html .= '<span class="periode">de  '.$mois['nommois'].' '.$annee.'</span>';
+}
+
+
+
+$html .=
+'</td>
 </tr>
 
 <tr>

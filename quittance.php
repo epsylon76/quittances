@@ -27,6 +27,8 @@ if($_GET['action']=="modif")
 	$moyenpaiement=$donneesquittance['moyenpaiement'];
 	$titre="Quittance n°".$_GET['qid']."de ";
 	$dateedition=$donneesquittance['dateedition'];
+	$datedebut = $donneesquittance['datedebut'];
+	$datefin = $donneesquittance['datefin'];
 	//la on affiche la vue
 	include_once('./vue/quittance.php');
 }
@@ -71,6 +73,8 @@ if($_GET['action']=="new") //on arrive pour une nouvelle quittance alors on pren
 	$donneeslogement = $logement->donneeslogement($lid);
 	$donneesquittance['qnote']="";
 	$action="new";
+	$datedebut = '0000-00-00';
+	$datefin = '0000-00-00';
 	//la on affiche la vue
 	include_once('./vue/quittance.php');
 
@@ -102,6 +106,8 @@ if($_GET['action']=="vuepdf")
 	$donneessociete = $societe->donneessociete($donneesquittance['sid']);
 	$donneesclient = $client->donneesclient($donneesquittance['cid']);
 	$donneeslogement = $logement->donneeslogement($donneesquittance['lid']);
+	$datedebut = date_unix_humain($donneesquittance['datedebut']);
+	$datefin = date_unix_humain($donneesquittance['datefin']);
 	if(isset($_GET['pdf']) && $_GET['pdf']=="envoipdf"){
 		$email=$_GET['email'];
 		$message=$_GET['message'];
