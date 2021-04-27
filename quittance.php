@@ -73,8 +73,8 @@ if($_GET['action']=="new") //on arrive pour une nouvelle quittance alors on pren
 	$donneeslogement = $logement->donneeslogement($lid);
 	$donneesquittance['qnote']="";
 	$action="new";
-	$datedebut = '0000-00-00';
-	$datefin = '0000-00-00';
+	$datedebut = $date->format('Y-m-01');
+	$datefin = $date->format('Y-m-T);
 	//la on affiche la vue
 	include_once('./vue/quittance.php');
 
