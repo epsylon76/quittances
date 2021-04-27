@@ -74,7 +74,8 @@ if($_GET['action']=="new") //on arrive pour une nouvelle quittance alors on pren
 	$donneesquittance['qnote']="";
 	$action="new";
 	$datedebut = $date->format('Y-m-01');
-	$datefin = $date->format('Y-m-T');
+	$date->modify('last day of this month');
+	$datefin = $date->format('Y-m-d');
 	//la on affiche la vue
 	include_once('./vue/quittance.php');
 
